@@ -1,0 +1,103 @@
+$light: #E8E8E8;
+$white: #fff;
+$primary: #062145;
+$secondary: #041936;
+$dark: #000000;
+$bright: #00C4FF;
+$magic: #6C00FF;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $light;
+}
+
+.calculator {
+  width: 352px;
+  min-height: 525px;
+  box-shadow: 0 0 25px rgba($dark, .7);
+  border-radius: 20px;
+  &__header {
+    padding: 16px 16px 8px;
+    background: $secondary;
+    border-radius: 20px 20px 0 0;
+    min-height: 109px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    line-height: 1.1;
+    &__expression {
+      color: $bright;
+      letter-spacing: 1px;
+    }
+    &__result {
+      font-size: 3.5rem;
+      color: $white;
+    }
+  }
+  &__body {
+    padding: 8px 0;
+    background: $primary;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0 0 20px 20px;
+    button {
+      margin: 8px 8px;
+      border: none;
+      text-align: center;
+      user-select: none;
+      white-space: nowrap;
+      width: 72px;
+      height: 64px;
+      border-radius: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      outline: 0;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: $white;
+      transition: all .3s;
+    }
+    .num,.allClear,.backspace {
+      background: $primary;
+      &:hover {
+        background: lighten($primary,10%);
+      }
+    }
+    .operator {
+      background: $secondary;
+      &:hover {
+        background: lighten($primary,10%);
+      }
+    }
+    .allClear,.backspace {
+      color: $bright;
+    }
+    .backspace {
+      line-height: 50px;
+    }
+    .equal {
+      width: 160px;
+      background: linear-gradient(90deg, $bright, $magic);
+      &:hover {
+        background: linear-gradient(90deg, lighten($bright,5%), lighten($magic,5%));
+      }
+    }
+  }
+}
