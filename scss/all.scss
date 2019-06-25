@@ -22,7 +22,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $light;
+  background: linear-gradient(to right, rgba($bright, .2) 0%, rgba($primary, .1) 50%, rgba($magic, .2) 100%);
 }
 
 .calculator {
